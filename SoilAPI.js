@@ -23,7 +23,7 @@ function soilCompare(a, b) {
 		return -1;
 	return 0;
 }
-function getSoilInfo(lat, lon){
+function getSoilInfo(lat, lon, lim=10){
     var props = getProperties(lat, lon);
     var soil_dict = props['TAXNWRB'];
     var soils = new Array();
@@ -31,9 +31,11 @@ function getSoilInfo(lat, lon){
         soils.push({name:soil, part:soil_dict[soil]});
     }
     soils = soils.sort(soilCompare);
+    res_soils = [];
+    for (i = 0; (i < soils.length) && (soils[i].part >= lim); i++)
     for (i in props['PHIHOX']['M']) {
         var acidity = props['PHIHOX']['M'][i];
         break;
     }
-    return {'acidity':acidity, 'soils':soils.slice(0, 3)};
+    return {'acidity':acidity, 'soils':res_soils};
 }
