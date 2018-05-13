@@ -102,12 +102,13 @@ function getClimateInfo(lat,lng) {
         min_temp=temp[i][j]
     }
   }
-  var packed_object = new Object()
+  packed_object = new Object()
   packed_object.temperatures = temp
   packed_object.humidity = humid
   packed_object.max_temperature = max_temp
   packed_object.min_temperature = min_temp
   var packed_json = JSON.stringify(packed_object)
   console.log(packed_json)
-  return packed_json
+  //return packed_json
+  return packed_object
 }
