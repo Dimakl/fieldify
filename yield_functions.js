@@ -41,27 +41,38 @@ function checkCultures(lat,lng) {
   var min_temp = (min_temp1+min_temp2)/2
   for (culture in cultures) {
       if (min_temp < cultures[culture][0]){
-        cultures[culture][5] -= cultures[culture][0] - min_temp
+        cultures[culture][5] -= (cultures[culture][0] - min_temp)*0.5
       }
       if (aver_temp < cultures[culture][1]){
-        cultures[culture][5] -=  aver_temp - cultures.culture[1]
+        cultures[culture][5] -=  (aver_temp - cultures.culture[1])*0.5
       }
       if (aver_temp > cultures[culture][2]){
-        cultures[culture][5] -= aver_temp - cultures[culture][2]
+        cultures[culture][5] -= (aver_temp - cultures[culture][2])*0.5
       }
       if (act_temp_sum < cultures[culture][3]){
-        cultures[culture][5] -= (cultures[culture][3] - act_temp_sum)/100
+        cultures[culture][5] -= ((cultures[culture][3] - act_temp_sum)/100)*0.5
       }
       if (act_temp_sum > cultures[culture][4]){
-        cultures[culture][5] -= (act_temp_sum - cultures[culture][4])/100
+        cultures[culture][5] -= ((act_temp_sum - cultures[culture][4])/100)*0.5
       }
     good_cultures = []
     for (culture in cultures) {
-      if (cultures[culture][5]>-5) {
         good_cultures.push([culture,cultures[culture][5]])
-      }
     }
   }
   console.log(good_cultures)
   return good_cultures
+}
+
+
+
+function globalCulturesCheck(lat,lng) {
+  var culturesChecked = checkCultures(lat,lng)
+  var culturesSoils = getGoodCultures(lat,lng)
+  var res = {}
+  for (cultureNum in culturesChecked){
+    var sum = culturesChecked[cultureNum][1]+culturesSoils[culturesChecked[cultureNum][0]][2]
+    res.culturesChecked[cultureNum][0] = sum
+  }
+  return res
 }
