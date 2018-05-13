@@ -1,20 +1,20 @@
-1: Histosol - bad(?)
+1: (0)HISTOSOLS - bad(?)
 2: -----
-3: Andosol - rice+++ maize+ (good)
-   Arenosols - melon+, maize+
-   VERTISOLS - not needed
-4: FLUVISOLS - winter wheat++, maize++, melon++,
-   GLEYSOLS - rice+++ (good but too wet)
-   LEPTOSOLS - (normal)
-   REGOSOLS - wheat++, rice++, maize++
-5: CAMBISOLS - all++
+3: (1)ANTHROSOLS - rice+++ maize+ (good)
+   (2)ANDOSOLS - melon+, maize+
+   (3)VERTISOLS - not needed
+4: (4)FLUVISOLS - winter wheat++, maize++, melon++,
+   (5)GLEYSOLS - rice+++ (good but too wet)
+   (6)LEPTOSOLS - (normal)
+   (7)REGOSOLS - wheat++, rice++, maize++
+5: (8)CAMBISOLS - all++
 6: ------
-7: SOLONCHAKS - (bad)
-   SOLONETZ - (bad)
-   GYPSISOLS - all+(small)
-   CALCISOLS - all+(small)
-8: KASTANOZEMS - all++
-   CHERNOZEMS - all+++
-   PHAEOZEMS - wheat++
-9: LUVISOLS - all++
-   PODZOLS - all++
+7: (9)SOLONCHAKS - (bad)
+   (10)SOLONETZ - (bad)
+   (11)GYPSISOLS - all+(small)
+   (12)CALCISOLS - all+(small)
+8: (13)KASTANOZEMS - all++
+   (14)CHERNOZEMS - all+++
+   (15)PHAEOZEMS - wheat++
+9: (16)LUVISOLS - all++
+   (17)PODZOLS - all++
