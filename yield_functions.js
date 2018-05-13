@@ -60,7 +60,6 @@ function checkCultures(lat,lng) {
         good_cultures.push([culture,cultures[culture][5]])
     }
   }
-  console.log(good_cultures)
   return good_cultures
 }
 
@@ -72,7 +71,27 @@ function globalCulturesCheck(lat,lng) {
   var res = {}
   for (cultureNum in culturesChecked){
     var sum = culturesChecked[cultureNum][1]+culturesSoils[culturesChecked[cultureNum][0]][2]
-    res.culturesChecked[cultureNum][0] = sum
+    res[culturesChecked[cultureNum][0]] = sum
   }
-  return res
+  var max = -100,max_name = ''
+  for (r in res){
+    if (res[r]>max){
+      max=res[r]
+      max_name=r
+    }
+  }
+  if (max<6){
+    max = 6
+  }
+  var good = [], bad = []
+  for (r in res){
+    res[r]=(res[r])/max*100
+      if (res[r]>=55){
+        good.push(r)
+      }
+      else{
+        bad.push(r)
+      }
+  }
+  return {'max_val': res[max_name], 'max_name': max_name, 'good_cultures': good, 'bad_cultures': bad}
 }

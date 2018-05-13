@@ -168,6 +168,5 @@ function getGoodCultures(lat,lon) {
       cultures[culture][2]+=1.5
     }
   }
-  console.log(cultures)
   return cultures
 }

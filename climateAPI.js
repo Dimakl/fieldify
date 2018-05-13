@@ -8,7 +8,7 @@ function httpsGet(theUrl)
 
 
 function getClimateInfo(lat,lng) {
-  var climateKey = 'fae556fcfe7e4653a3a154935181205'
+  var climateKey = '818f68983c2a4e04b09131513181305'
   var temp = new Array(24), humid = new Array(24)
   var appendMonth1 = '01', appendMonth2 = '02'
   for (month = 1; month < 12; month++) {
@@ -108,7 +108,6 @@ function getClimateInfo(lat,lng) {
   packed_object.max_temperature = max_temp
   packed_object.min_temperature = min_temp
   var packed_json = JSON.stringify(packed_object)
-  console.log(packed_json)
   //return packed_json
   return packed_object
 }
